@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,8 +13,13 @@ class FlatsController < ApplicationController
     @flat = Flat.new
   end
 
+  def my_flats
+    @my_flats = current_user.flats
+  end
+
   def create
     @flat = Flat.new(flat_params)
+    @flat.user = current_user
     if @flat.save!
       redirect_to flat_path(@flat)
     else
@@ -31,7 +37,7 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat.destroy
-    redirect_to flat_path
+    redirect_to my_flats_path
   end
 
 
