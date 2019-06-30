@@ -1,0 +1,24 @@
+.btn-principal {
+  color:            #EE556C;
+  background-color: white;
+  border:           0.5px solid #EE556C;
+  margin-top:       30px;
+  padding:          10px 15px;
+  border-radius:    5px;
+}
+
+.btn-principal:hover {
+  color:            white;
+  background-color: #EE556C;
+}
+
+.style-form {
+  margin: auto 0px;
+  justify-content: center;
+}
+
+.style-form-align {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
