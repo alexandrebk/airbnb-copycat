@@ -1,0 +1,19 @@
+<li>address : <%= @flat.address %></li>
+<li>room : <%= @flat.room %></li>
+<li>surface : <%= @flat.surface %></li>
+<li>description : <%= @flat.description %></li>
+<li>price : <%= @flat.price %></li>
+<li>max_guests : <%= @flat.max_guests %></li>
+
+<%= link_to edit_flat_path(@flat) do %>
+  <button class="btn btn-principal">Edit</button>
+<% end %>
+<%= link_to flat_path(@flat),
+    method: :delete,
+    data: { confirm: "Are you sure?" } do %>
+  <button class="btn btn-principal">Delete</button>
+<% end %>
+
+<div>
+  <%= link_to "Back to all flats", flats_path %>
+</div>
