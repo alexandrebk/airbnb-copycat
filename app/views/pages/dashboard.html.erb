@@ -1,7 +1,7 @@
-<h2>My flats</h2>
+<h2>My dashboard</h2>
 
 <div class="cards">
-  <% @my_flats.each do |flat| %>
+  <% @dashboard.each do |flat| %>
     <%= link_to flat_path(flat.id) do %>
       <div class="card">
         <li>address : <%= flat.address %></li>

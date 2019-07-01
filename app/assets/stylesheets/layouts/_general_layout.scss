@@ -12,18 +12,8 @@
   background-color: #EE556C;
 }
 
-.style-form {
-  margin: auto 0px;
-  justify-content: center;
-}
-
 .style-form-align {
-  display: grid;
+  display:               grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-}
-
-.devise-form {
-  margin: auto 0px;
-  justify-content: center;
+  grid-gap:              10px;
 }

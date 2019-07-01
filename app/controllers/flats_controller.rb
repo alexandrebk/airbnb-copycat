@@ -13,13 +13,8 @@ class FlatsController < ApplicationController
     @flat = Flat.new
   end
 
-  def my_flats
-    @my_flats = current_user.flats
-  end
-
   def create
-    @flat = Flat.new(flat_params)
-    @flat.user = current_user
+    @flat = Flat.new(flat_params.merge(user: current_user))
     if @flat.save!
       redirect_to flat_path(@flat)
     else
@@ -39,7 +34,6 @@ class FlatsController < ApplicationController
     @flat.destroy
     redirect_to my_flats_path
   end
-
 
   private
 
