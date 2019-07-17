@@ -3,7 +3,7 @@
   <%= f.input :description %>
   <div class="style-form-align">
     <%= f.input :surface, label: "Surface in m²" %>
-    <%= f.input :room %>
+    <%= f.input :room, collection: 0..10 %>
     <%= f.input :max_guests, collection: 0..20 %>
     <%= f.input :price, label: "Price in €" %>
   </div>

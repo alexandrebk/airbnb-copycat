@@ -21,7 +21,7 @@ puts "Users ok !"
 puts "Seeding flats"
 alexandre_flat = Flat.create(
   user:        alexandre,
-  address:     '20 rue des Abbesses, 75018 Paris',
+  address:     "20 rue des Abbesses, 75018 Paris",
   surface:     120,
   price:       250,
   room:        4,
@@ -31,7 +31,7 @@ alexandre_flat = Flat.create(
 
 philippine_flat = Flat.create(
   user:         philippine,
-  address:      '16 villa Gaudelet, 75011 Paris',
+  address:      "16 villa Gaudelet, 75011 Paris",
   surface:      60,
   price:        155,
   room:         2,
@@ -51,7 +51,7 @@ maxime_flat = Flat.create(
 
 mathieu_flat = Flat.create(
   user:         mathieu,
-  address:      "30 rue Lohmond, 75005 Paris",
+  address:      "30 rue Lhomond, 75005 Paris",
   surface:      35,
   price:        200,
   room:         1,

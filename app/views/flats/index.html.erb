@@ -1,14 +1,22 @@
-<div class="cards">
-  <% @flats.each do |flat| %>
-    <%= link_to flat_path(flat.id) do %>
-      <div class="card">
-        <li>address : <%= flat.address %></li>
-        <li>room : <%= flat.room %></li>
-        <li>surface : <%= flat.surface %></li>
-        <li>price : <%= flat.price %></li>
-        <li>max_guests : <%= flat.max_guests %></li>
-      </div>
+<div class="main-container">
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <%= link_to flat_path(flat.id) do %>
+        <div class="card">
+          <li>address : <%= flat.address %></li>
+          <li>room : <%= flat.room %></li>
+          <li>surface : <%= flat.surface %></li>
+          <li>price : <%= flat.price %></li>
+          <li>max_guests : <%= flat.max_guests %></li>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
 
