@@ -1,15 +1,16 @@
 <div class="main-container">
-  <div class="search">
-    <%= form_tag flats_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a flat"
-      %>
-    <% end %>
-  </div>
 
   <div class="cards">
+    <div class="search">
+      <%= form_tag flats_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a flat"
+        %>
+      <% end %>
+    </div>
+
     <% @flats.each do |flat| %>
       <%= link_to flat_path(flat.id) do %>
         <div class="card">
