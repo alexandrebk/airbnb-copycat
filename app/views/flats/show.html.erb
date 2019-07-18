@@ -4,7 +4,7 @@
 <li>description : <%= @flat.description %></li>
 <li>price : <%= @flat.price %></li>
 <li>max_guests : <%= @flat.max_guests %></li>
-
+<%= cl_image_tag @flat.photo, height: 300, width: 400, crop: :fill %>
 <%= link_to edit_flat_path(@flat) do %>
   <button class="btn btn-principal">Edit</button>
 <% end %>
@@ -13,7 +13,6 @@
     data: { confirm: "Are you sure?" } do %>
   <button class="btn btn-principal">Delete</button>
 <% end %>
-
 <div>
   <%= link_to "Back to all flats", flats_path %>
 </div>
