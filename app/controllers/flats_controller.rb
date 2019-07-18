@@ -6,7 +6,15 @@ class FlatsController < ApplicationController
     if params[:query].present?
       @flats = Flat.search_by_description_and_address("%#{params[:query]}%")
     else
-      @flats = Flat.all
+      @flats = Flat.where.not(latitude: nil, longitude: nil)
+    end
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { flat: flat })
+      }
     end
   end
 
@@ -36,7 +44,7 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat.destroy
-    redirect_to my_flats_path
+    redirect_to dashboard_path
   end
 
   private
