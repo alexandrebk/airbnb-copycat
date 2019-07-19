@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @flats = current_user.flats
+    @flats    = current_user.flats
     @bookings = current_user.bookings
   end
 

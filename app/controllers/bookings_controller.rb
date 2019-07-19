@@ -1,12 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_flat, only: [:new, :create, :show]
 
-  def index
-  end
-
-  def show
-  end
-
   def new
     @booking = Booking.new
   end
@@ -19,12 +13,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy

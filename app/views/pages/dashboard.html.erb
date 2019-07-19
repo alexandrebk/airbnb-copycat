@@ -1,13 +1,11 @@
 <div class="dashboard-container margin-nav">
   <div class="dashboard-column">
     <h3>My flats</h3>
-
     <% if @flats.empty? %>
       <p>No flat yet</p>
       <%= link_to new_flat_path do %>
         <button class="btn btn-principal">Add a flat now</button>
       <% end %>
-
     <% else %>
       <% @flats.each do |flat| %>
         <%= link_to flat_path(flat.id) do %>
@@ -24,10 +22,8 @@
           </div>
         <% end %>
       <% end %>
-
     <% end %>
   </div>
-
   <div class="dashboard-column">
     <h3>My bookings</h3>
 
@@ -36,7 +32,6 @@
       <%= link_to flats_path do %>
         <button class="btn btn-principal">Book now</button>
       <% end %>
-
     <% else %>
       <% @bookings.each do |booking| %>
         <div class="flat-card">
@@ -57,5 +52,4 @@
       <% end %>
     <% end %>
   </div>
-
 </div>
