@@ -11,12 +11,16 @@
   <div class="cards">
     <% @flats.each do |flat| %>
       <%= link_to flat_path(flat.id) do %>
-        <div class="card">
-          <li>address : <%= flat.address %></li>
-          <li>room : <%= flat.room %></li>
-          <li>surface : <%= flat.surface %></li>
-          <li>price : <%= flat.price %></li>
-          <li>max_guests : <%= flat.max_guests %></li>
+        <div class="flat-card">
+          <div class="flat-image">
+            <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill %>
+          </div>
+          <div class="flat-content">
+            <li><%= flat.address %></li>
+            <li><%= pluralize(flat.room, 'room')%></li>
+            <li><%= flat.surface %> m²</li>
+            <li><%= flat.price %> €</li>
+          </div>
         </div>
       <% end %>
     <% end %>
@@ -37,7 +41,7 @@
       <li>start date : <%= booking.start_date %></li>
       <li>end date : <%= booking.end_date %></li>
 
-      <%= link_to booking_path(@booking),
+      <%= link_to flat_booking_path(booking.flat.id, booking),
           method: :delete,
           data: { confirm: "Are you sure?" } do %>
         <button class="btn btn-principal">Delete</button>
