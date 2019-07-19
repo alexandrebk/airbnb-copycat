@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :flats do
-    resources :bookings, only: [:create, :new, :edit, :update]
+    resources :bookings, only: [:create, :new, :show, :destroy]
   end
   get 'dashboard', to: 'pages#dashboard'
-  resources :bookings, only: [:index, :show, :destroy]
 
 end
