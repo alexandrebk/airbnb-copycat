@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_flat, only: [:new, :create, :show]
+  before_action :set_flat, only: [:new, :create]
 
   def new
     @booking = Booking.new
