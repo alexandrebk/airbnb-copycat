@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_flat, only: [:new, :create]
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
   end

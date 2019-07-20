@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :flats do
     resources :bookings, only: [:create, :new, :show, :destroy]
   end
-  get 'dashboard', to: 'pages#dashboard'
-
+  get 'my_flat', to: 'flats#my_flat'
+  resources :bookings, only: [:index]
 end
