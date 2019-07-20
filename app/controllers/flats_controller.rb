@@ -46,6 +46,10 @@ class FlatsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def my_flat
+    @flats = current_user.flats
+  end
+
   private
 
   def set_flat
