@@ -2,14 +2,24 @@
   flex-grow: 1;
 }
 
-.card {
+.flat-card {
+  display:          flex;
   background-color: white;
   box-shadow:       1px 1px 3px rgba(0,0,0,0.2);
-  padding:          20px;
+  padding:          10px;
   margin:           20px;
   border-radius:    5px;
+  color:            #666666;
 }
 
-.card:hover {
+.flat-card:hover {
   box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+
+.flat-image img {
+  border-radius: 5px;
+}
+
+.flat-content {
+  padding: 0 10px;
 }
