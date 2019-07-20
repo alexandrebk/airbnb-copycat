@@ -1,8 +1,8 @@
 Application Rails générée par [lewagon/rails-templates](https://github.com/lewagon/rails-templates), créé par l'équipe de [Le Wagon coding bootcamp](https://www.lewagon.com).
 
-Le lien vers l'application est https://airbnb-copycat.herokuapp.com/
+Le lien vers l'application est [ici](https://airbnb-copycat.herokuapp.com/)
 
-Le site est développé en Ruby : 2.5.3 et en Rails 5.2.3
+Le site est développé en Ruby : `2.5.3` et en Rails `5.2.3`
 
 Les gem utilisées sont :
 
@@ -13,15 +13,16 @@ Les gem utilisées sont :
 * gem 'cloudinary',  '~> 1.9.1'
 * gem 'carrierwave', '~> 1.2'
 
-Les variables du fichier .env sont :
+Le fichier .env contient :
 
-* Mapbox
-* Cloudinary
+* MAPBOX_API_KEY=**************************
+* CLOUDINARY_URL=cloudinary://*************
 
 Pour lancer l'application sur votre ordinateur:
 ```
 git clone git@github.com:alexandrebk/airbnb-copycat.git
 cd airbnb-copycat
+touch .env
 bundle install
 yarn install
 rails db:create
@@ -32,6 +33,6 @@ rails s
 Pour vous connecter:
 
 * login : alexandre@gmail.com
-* mdp : 123456
+* mdp :   123456
 
-Pour plus d'infos consulter https://alexandrebk.github.io
+Pour plus d'infos consulter [mon blog](https://alexandrebk.github.io)
