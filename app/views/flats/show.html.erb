@@ -11,18 +11,12 @@
       <li><%= @flat.price %> €</li>
       <li>max_guests : <%= @flat.max_guests %></li>
     </div>
+
     <div class="flat-action">
       <%= link_to new_flat_booking_path(@flat) do %>
         <button class="btn btn-principal">Book</button>
       <% end %>
-      <%= link_to edit_flat_path(@flat) do %>
-        <button class="btn btn-principal">Edit</button>
-      <% end %>
-      <%= link_to flat_path(@flat),
-          method: :delete,
-          data: { confirm: "Are you sure?" } do %>
-        <button class="btn btn-principal">Delete</button>
-      <% end %>
+
       <div>
         <%= link_to "Back to all flats", flats_path %>
       </div>

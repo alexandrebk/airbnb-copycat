@@ -6,18 +6,32 @@
       <%= link_to new_flat_path do %>
         <button class="btn btn-principal">Add a flat now</button>
       <% end %>
+
     <% else %>
       <% @flats.each do |flat| %>
-        <%= link_to flat_path(flat.id) do %>
-          <div class="flat-card">
+        <div class="flat-card">
+          <%= link_to edit_flat_path(flat.id) do %>
             <div class="flat-image">
               <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
-              <h4 class="flat-card-price"><%= flat.price %> €</h4>
             </div>
             <h5 class="flat-address"><%= flat.address %></h5>
+            <div class="flat-card-content">
+              <%= link_to flat_path(flat.id) do %>
+                <button class="btn btn-principal">Show</button>
+              <% end %>
+              <%= link_to edit_flat_path(flat.id) do %>
+                <button class="btn btn-principal">Edit</button>
+              <% end %>
+              <%= link_to flat_path(flat.id),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                <button class="btn btn-principal">Delete</button>
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% end %>
     <% end %>
+
   </div>
 </div>
