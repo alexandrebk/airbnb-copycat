@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params.merge(user: current_user))
     @booking.flat = @flat
     if @booking.save!
-      redirect_to dashboard_path
+      redirect_to bookings_path
     else
       render :new
     end
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to bookings_path
   end
 
   private

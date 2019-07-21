@@ -1,32 +1,30 @@
 <div class="main-container">
 
-  <div class="cards">
-    <div class="search">
-      <%= form_tag flats_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a flat"
-        %>
-      <% end %>
-    </div>
+<div class="cards-container">
+  <div class="search">
+    <%= form_tag flats_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a flat"
+      %>
+    <% end %>
+  </div>
 
+  <div class="cards-grid-2">
     <% @flats.each do |flat| %>
       <%= link_to flat_path(flat.id) do %>
         <div class="flat-card">
           <div class="flat-image">
-            <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill %>
+            <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
+            <h4 class="flat-card-price"><%= flat.price %> €</h4>
           </div>
-          <div class="flat-content">
-            <li><%= flat.address %></li>
-            <li><%= pluralize(flat.room, 'room')%></li>
-            <li><%= flat.surface %> m²</li>
-            <li><%= flat.price %> €</li>
-          </div>
+          <h5 class="flat-address"><%= flat.address %></h5>
         </div>
       <% end %>
     <% end %>
   </div>
+</div>
 
   <div
     id="map"

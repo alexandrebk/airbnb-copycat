@@ -1,9 +1,14 @@
-.cards {
-  flex-grow: 1;
+.cards-grid-2 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards-grid-3 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .flat-card {
-  display:          flex;
   background-color: white;
   box-shadow:       1px 1px 3px rgba(0,0,0,0.2);
   padding:          10px;
@@ -20,6 +25,17 @@
   border-radius: 5px;
 }
 
-.flat-content {
-  padding: 0 10px;
+.flat-image {
+  position: relative;
+}
+
+.flat-address {
+  padding: 10px;
+}
+
+.flat-card-price {
+  color:    white;
+  bottom:   0;
+  right:    10px;
+  position: absolute;
 }

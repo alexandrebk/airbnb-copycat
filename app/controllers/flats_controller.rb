@@ -43,7 +43,7 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat.destroy
-    redirect_to dashboard_path
+    redirect_to my_flat_path
   end
 
   def my_flat
