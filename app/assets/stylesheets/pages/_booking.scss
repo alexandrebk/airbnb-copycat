@@ -1,0 +1,33 @@
+.book-container {
+  flex-grow: 1;
+  padding:   10px;
+  margin:    20px;
+}
+
+.book-content{
+  display: flex;
+  margin: 20px 0;
+}
+
+.book-content img{
+  border-radius: 5px;
+}
+
+.book-info{
+  margin-left: 20px;
+  height:      300px;
+}
+
+.book-description{
+  width:      800px;
+  margin-top: 40px;
+}
+
+.book-price {
+  display:         flex;
+  justify-content: space-between;
+}
+
+.book-date {
+  margin: 65px 0;
+}
