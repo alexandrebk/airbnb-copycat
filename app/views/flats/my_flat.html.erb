@@ -9,25 +9,23 @@
 
     <% else %>
       <% @flats.each do |flat| %>
-        <div class="flat-card">
+        <div class="card-flat">
           <%= link_to edit_flat_path(flat.id) do %>
-            <div class="flat-image">
+            <div class="card-flat-image">
               <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
             </div>
-            <h5 class="flat-address"><%= flat.address %></h5>
-            <div class="my-flat-content">
-              <%= link_to flat_path(flat.id) do %>
-                <button class="btn btn-principal btn-margin-top">Show</button>
-              <% end %>
-              <%= link_to edit_flat_path(flat.id) do %>
-                <button class="btn btn-principal btn-margin-top">Edit</button>
-              <% end %>
-              <%= link_to flat_path(flat.id),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                <button class="btn btn-principal btn-margin-top">Delete</button>
-              <% end %>
-            </div>
+            <h5 class="card-flat-address"><%= flat.address %></h5>
+            <%= link_to flat_path(flat.id) do %>
+              <button class="btn btn-principal btn-margin-top">Show</button>
+            <% end %>
+            <%= link_to edit_flat_path(flat.id) do %>
+              <button class="btn btn-principal btn-margin-top">Edit</button>
+            <% end %>
+            <%= link_to flat_path(flat.id),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+              <button class="btn btn-principal btn-margin-top">Delete</button>
+            <% end %>
           </div>
         <% end %>
       <% end %>

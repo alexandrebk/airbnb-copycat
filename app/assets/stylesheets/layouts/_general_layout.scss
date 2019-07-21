@@ -34,6 +34,10 @@ li {
   background-color: #EE556C;
 }
 
+.btn-margin-top {
+  margin-top: 0 !important;
+}
+
 .style-form-align {
   display:               grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -41,18 +45,20 @@ li {
 }
 
 .margin-nav {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .pages-container {
   width:  95%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .pages-container h3{
   text-align: center;
 }
 
-.cards-container {
-  flex-grow: 1;
+.show-title {
+  display:         flex;
+  justify-content: space-between;
+  margin-bottom:   20px;
 }

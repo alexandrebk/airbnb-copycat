@@ -25,7 +25,7 @@ alexandre_flat = Flat.create(
   surface:     120,
   price:       250,
   room:        4,
-  description: "L'appartement se trouve au cœur du quartier de la butte Montmartre, avec ses restos délicieux, ses ruelles pleines de charme, sa fameuse basilique avec vue imprenable sur la plus belle ville du monde et cette ambiance indescriptible dans une animation permanente qui en fait l'un des endroits les plus typique de notre fabuleuse capitale.L'appartement se trouve au cœur du quartier de la butte Montmartre, avec ses restos délicieux, ses ruelles pleines de charme, sa fameuse basilique avec vue imprenable sur la plus belle ville du monde et cette ambiance indescriptible dans une animation permanente qui en fait l'un des endroits les plus typique de notre fabuleuse capitale.",
+  description: "L'appartement se trouve au cœur du quartier de la butte Montmartre, avec ses ruelles pleines de charme, sa fameuse basilique avec vue imprenable sur la plus belle ville du monde et cette ambiance indescriptible dans une animation permanente qui en fait l'un des endroits les plus typique de notre fabuleuse capitale. L'appartement se trouve au cœur du quartier de la butte Montmartre, avec ses restos délicieux, ses ruelles pleines de charme, sa fameuse basilique avec vue imprenable sur la plus belle ville du monde et cette ambiance indescriptible dans une animation permanente qui en fait l'un des endroits les plus typique de notre fabuleuse capitale.",
   max_guests:  8,
   )
 alexandre_flat.remote_photo_url = 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=973&q=80'

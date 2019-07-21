@@ -1,7 +1,13 @@
 <div class="main-container">
 
   <div class="book-container">
-    <h2>My trip</h2>
+    <div class="show-title">
+      <h2>My trip</h2>
+      <%= link_to bookings_path do %>
+        <button class="btn btn-principal btn-margin-top">All trips</button>
+      <% end %>
+    </div>
+
 
     <div class="book-content">
       <%= cl_image_tag @flat.photo, height: 300, width: 400, crop: :fill %>

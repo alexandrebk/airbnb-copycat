@@ -6,7 +6,7 @@
 
 .book-content{
   display: flex;
-  margin: 20px 0;
+  margin:  20px 0;
 }
 
 .book-content img{
@@ -16,6 +16,7 @@
 .book-info{
   margin-left: 20px;
   height:      300px;
+  position:    relative;
 }
 
 .book-description{
@@ -26,6 +27,8 @@
 .book-price {
   display:         flex;
   justify-content: space-between;
+  position:        absolute;
+  bottom:          0;
 }
 
 .book-date {

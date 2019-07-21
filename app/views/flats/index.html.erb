@@ -14,12 +14,12 @@
     <div class="cards-grid-2">
       <% @flats.each do |flat| %>
         <%= link_to flat_path(flat.id) do %>
-          <div class="flat-card">
-            <div class="flat-image">
+          <div class="card-flat">
+            <div class="card-flat-image">
               <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
-              <h4 class="flat-card-price"><%= flat.price %> €</h4>
+              <h4 class="card-flat-price"><%= flat.price %> €</h4>
             </div>
-            <h5 class="flat-address"><%= flat.address %></h5>
+            <h5 class="card-flat-address"><%= flat.address %></h5>
           </div>
         <% end %>
       <% end %>
