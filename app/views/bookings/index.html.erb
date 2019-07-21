@@ -11,21 +11,26 @@
 
       <% @bookings.each do |booking| %>
         <div class="flat-card">
-          <div class="flat-image">
-            <%= cl_image_tag booking.flat.photo, height: 300, width: 400, crop: :fill %>
-          </div>
-          <div class="flat-content">
+          <%= link_to flat_booking_path(booking.flat.id, booking.id) do %>
+            <div class="flat-image">
+              <%= cl_image_tag booking.flat.photo, height: 300, width: 400, crop: :fill %>
+            </div>
             <h5><%= booking.flat.address %></h5>
-            <p>From : <%= booking.start_date.strftime('%e %B %Y')%></p>
-            <p>To : <%= booking.end_date.strftime('%e %B %Y')%></p>
-            <%= link_to flat_booking_path(booking.flat.id, booking),
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-              <button class="btn btn-principal">Delete</button>
-            <% end %>
-          </div>
+            <div class="flat-content">
+              <div class="flat-content-date">
+                <p>From : <%= booking.start_date.strftime('%e %B %Y')%></p>
+                <p>To   : <%= booking.end_date.strftime('%e %B %Y')%></p>
+              </div>
+              <%= link_to flat_booking_path(booking.flat.id, booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                <button class="btn btn-principal btn-margin-top">Delete</button>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
+
     <% end %>
   </div>
 </div>
