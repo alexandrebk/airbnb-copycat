@@ -1,10 +1,10 @@
 <div class="pages-container margin-nav">
-  <h3>My flats</h3>
+  <h3>Mes appartements</h3>
   <div class="cards-grid-3">
     <% if @flats.empty? %>
-      <p>No flat yet</p>
+      <p>Pas encore d'appartements</p>
       <%= link_to new_flat_path do %>
-        <button class="btn btn-principal">Add a flat now</button>
+        <button class="btn btn-principal">Publier une annonce</button>
       <% end %>
 
     <% else %>
@@ -16,15 +16,15 @@
             </div>
             <h5 class="card-flat-address"><%= flat.address %></h5>
             <%= link_to flat_path(flat.id) do %>
-              <button class="btn btn-principal btn-margin-top">Show</button>
+              <button class="btn btn-principal btn-margin-top">Voir</button>
             <% end %>
             <%= link_to edit_flat_path(flat.id) do %>
-              <button class="btn btn-principal btn-margin-top">Edit</button>
+              <button class="btn btn-principal btn-margin-top">Editer</button>
             <% end %>
             <%= link_to flat_path(flat.id),
                 method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-              <button class="btn btn-principal btn-margin-top">Delete</button>
+                data: { confirm: "Attention, la suppression est définitive" } do %>
+              <button class="btn btn-principal btn-margin-top">Supprimer</button>
             <% end %>
           </div>
         <% end %>

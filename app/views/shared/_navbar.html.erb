@@ -10,26 +10,26 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", flats_path, class: "nav-link" %>
+      <li class="nav-item">
+        <%= link_to "Rechercher", flats_path, class: "nav-link" %>
       </li>
 
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "New flat", new_flat_path, class: "nav-link" %>
+          <%= link_to "Publier une annonce", new_flat_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My flats", my_flat_path, class: "nav-link" %>
+          <%= link_to "Mes appartements", my_flat_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My trips", bookings_path, class: "nav-link" %>
+          <%= link_to "Voyages", bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://via.placeholder.com/100x100.png?text=Avatar", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My profile", "#", class: "dropdown-item" %>
-            <%= link_to "Edit my profile", "#", class: "dropdown-item" %>
-            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Mon profil", "#", class: "dropdown-item" %>
+            <%= link_to "Editer mon profil", "#", class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>

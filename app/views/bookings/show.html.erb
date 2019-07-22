@@ -2,9 +2,9 @@
 
   <div class="book-container">
     <div class="show-title">
-      <h2>My trip</h2>
+      <h2>Ma réservation</h2>
       <%= link_to bookings_path do %>
-        <button class="btn btn-principal btn-margin-top">All trips</button>
+        <button class="btn btn-principal btn-margin-top">Toutes mes réservations</button>
       <% end %>
     </div>
 
@@ -14,12 +14,12 @@
       <div class="book-info">
         <h3><%= @flat.address %></h3>
         <div class="book-date">
-          <h5>Booking :</h5>
-          <h5>From <%= @booking.start_date.strftime('%e %B %Y')%></h5>
-          <h5>To <%= @booking.end_date.strftime('%e %B %Y')%></h5>
+          <h5>Réservé :</h5>
+          <h5>Du <%= @booking.start_date.strftime('%e %B %Y')%></h5>
+          <h5>Au <%= @booking.end_date.strftime('%e %B %Y')%></h5>
         </div>
         <div class="book-price">
-          <h3>Total price : <%= @total_price %> €</h3>
+          <h3>Prix total : <%= @total_price %> €</h3>
         </div>
       </div>
     </div>
