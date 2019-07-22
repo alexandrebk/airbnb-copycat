@@ -15,11 +15,7 @@
         <li><%= @flat.price %> € / nuit</li>
         <li>Personnes : <%= @flat.max_guests %></li>
       </div>
-      <div class="flat-action">
-        <%= link_to new_flat_booking_path(@flat) do %>
-          <button class="btn btn-principal">Réserver</button>
-        <% end %>
-      </div>
+      <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
     </div>
   </div>
 </div>
