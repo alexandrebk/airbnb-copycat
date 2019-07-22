@@ -7,7 +7,7 @@
   </div>
   <div class="flat-content">
     <%= cl_image_tag @flat.photo, height: 400, width: 600 %>
-    <div class="flat-description">
+    <div>
       <li><%= @flat.description %></li>
       <div class="flat-info">
         <li><%= pluralize(@flat.room, 'chambre')%></li>
