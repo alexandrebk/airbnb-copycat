@@ -17,6 +17,8 @@ Le fichier .env contient :
 
 * MAPBOX_API_KEY=**************************
 * CLOUDINARY_URL=cloudinary://*************
+* ADMIN_LOGIN="*****"
+* ADMIN_PASSWORD="****"
 
 Pour lancer l'application sur votre ordinateur:
 
