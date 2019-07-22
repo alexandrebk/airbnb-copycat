@@ -1,9 +1,18 @@
-.cards {
+.cards-container {
   flex-grow: 1;
 }
 
-.flat-card {
-  display:          flex;
+.cards-grid-2 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards-grid-3 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-flat {
   background-color: white;
   box-shadow:       1px 1px 3px rgba(0,0,0,0.2);
   padding:          10px;
@@ -12,14 +21,33 @@
   color:            #666666;
 }
 
-.flat-card:hover {
+.card-flat:hover {
   box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
 }
 
-.flat-image img {
+.card-flat-image img {
   border-radius: 5px;
 }
 
-.flat-content {
-  padding: 0 10px;
+.card-flat-image {
+  position: relative;
+}
+
+.card-flat-price {
+  color:    white;
+  bottom:   0;
+  right:    10px;
+  position: absolute;
+}
+
+.card-flat-address {
+  padding: 10px;
+}
+
+.card-flat-content {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding-top:     20px;
+  line-height:     10px;
 }

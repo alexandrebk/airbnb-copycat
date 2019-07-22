@@ -1,25 +1,35 @@
 <div class="pages-container margin-nav">
   <h3>My flats</h3>
-  <% if @flats.empty? %>
-    <p>No flat yet</p>
-    <%= link_to new_flat_path do %>
-      <button class="btn btn-principal">Add a flat now</button>
-    <% end %>
-  <% else %>
-    <% @flats.each do |flat| %>
-      <%= link_to flat_path(flat.id) do %>
-        <div class="flat-card">
-          <div class="flat-image">
-            <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill %>
+  <div class="cards-grid-3">
+    <% if @flats.empty? %>
+      <p>No flat yet</p>
+      <%= link_to new_flat_path do %>
+        <button class="btn btn-principal">Add a flat now</button>
+      <% end %>
+
+    <% else %>
+      <% @flats.each do |flat| %>
+        <div class="card-flat">
+          <%= link_to edit_flat_path(flat.id) do %>
+            <div class="card-flat-image">
+              <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
+            </div>
+            <h5 class="card-flat-address"><%= flat.address %></h5>
+            <%= link_to flat_path(flat.id) do %>
+              <button class="btn btn-principal btn-margin-top">Show</button>
+            <% end %>
+            <%= link_to edit_flat_path(flat.id) do %>
+              <button class="btn btn-principal btn-margin-top">Edit</button>
+            <% end %>
+            <%= link_to flat_path(flat.id),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+              <button class="btn btn-principal btn-margin-top">Delete</button>
+            <% end %>
           </div>
-          <div class="flat-content">
-            <li><%= flat.address %></li>
-            <li><%= pluralize(flat.room, 'room')%></li>
-            <li><%= flat.surface %> m²</li>
-            <li><%= flat.price %> €</li>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+
+  </div>
 </div>

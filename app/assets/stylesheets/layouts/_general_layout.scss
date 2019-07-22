@@ -2,13 +2,17 @@ body {
   background-color: white;
 }
 
-a {
+a, h2, h3, h4, h5{
   color: #666666;
 }
 
 a:hover {
   text-decoration: none;
   color:           #666666;
+}
+
+h5 {
+  margin-bottom: 0;
 }
 
 li {
@@ -30,6 +34,10 @@ li {
   background-color: #EE556C;
 }
 
+.btn-margin-top {
+  margin-top: 0 !important;
+}
+
 .style-form-align {
   display:               grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -37,14 +45,20 @@ li {
 }
 
 .margin-nav {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .pages-container {
-  width:  70%;
-  margin: auto;
+  width:  95%;
+  margin: 0 auto;
 }
 
 .pages-container h3{
   text-align: center;
+}
+
+.show-title {
+  display:         flex;
+  justify-content: space-between;
+  margin-bottom:   20px;
 }

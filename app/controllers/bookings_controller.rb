@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_flat, only: [:new, :create]
+  before_action :set_flat, only: [:new, :create, :show]
+  before_action :set_booking, only: [:show, :destroy]
 
   def index
     @bookings = current_user.bookings
@@ -13,16 +14,24 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params.merge(user: current_user))
     @booking.flat = @flat
     if @booking.save!
-      redirect_to dashboard_path
+      redirect_to bookings_path
     else
       render :new
     end
   end
 
+  def show
+    @nb_nights = (@booking.end_date - @booking.start_date).to_i
+    @total_price = (@nb_nights * @booking.flat.price)
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude
+    }]
+  end
+
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to bookings_path
   end
 
   private
@@ -33,5 +42,9 @@ class BookingsController < ApplicationController
 
   def set_flat
     @flat = Flat.find(params[:flat_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
