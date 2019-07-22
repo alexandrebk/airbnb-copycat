@@ -7,7 +7,7 @@
   </div>
   <div class="flat-content">
     <%= cl_image_tag @flat.photo, height: 400, width: 600 %>
-    <div class="flat-description">
+    <div>
       <li><%= @flat.description %></li>
       <div class="flat-info">
         <li><%= pluralize(@flat.room, 'chambre')%></li>
@@ -15,11 +15,7 @@
         <li><%= @flat.price %> € / nuit</li>
         <li>Personnes : <%= @flat.max_guests %></li>
       </div>
-      <div class="flat-action">
-        <%= link_to new_flat_booking_path(@flat) do %>
-          <button class="btn btn-principal">Réserver</button>
-        <% end %>
-      </div>
+      <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
     </div>
   </div>
 </div>
