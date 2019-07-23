@@ -18,4 +18,8 @@
       <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
     </div>
   </div>
+  <div
+    id="booking-form-div"
+    data-bookings="<%= @bookings_dates.to_json %>"
+  >
 </div>
