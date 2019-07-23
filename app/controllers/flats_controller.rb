@@ -19,7 +19,7 @@ class FlatsController < ApplicationController
 
   def show
     @booking        = Booking.new
-    @bookings       = Booking.where(flat_id: @flat.id)
+    @bookings       = Booking.where(flat: @flat)
     @bookings_dates = @bookings.map do |booking|
       {
         from: booking.start_date,
