@@ -16,8 +16,8 @@
             <h5><%= booking.flat.address %></h5>
             <div class="card-flat-content">
               <div class="card-flat-date">
-                <p>Du <%= booking.start_date.strftime('%e %B %Y')%></p>
-                <p>au <%= booking.end_date.strftime('%e %B %Y')%></p>
+                <p>Du <%= booking.start_date.strftime('%e/%m/%Y')%></p>
+                <p>au <%= booking.end_date.strftime('%e/%m/%Y')%></p>
               </div>
               <div>
                 <%= link_to flat_booking_path(booking.flat.id, booking.id) do %>
