@@ -1,6 +1,11 @@
 .flat-container {
   width:  80%;
   margin: auto;
+  display: flex;
+}
+
+.flat-container-left {
+  flex-grow: 1;
 }
 
 .flat-container h3{
@@ -17,7 +22,31 @@
 }
 
 .flat-info {
+  text-align:            center;
   padding:               20px 0;
   display:               grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.flat-calendar {
+  height:   50vh;
+  position: sticky;
+  top:      25%;
+  right:    15%;
+}
+
+.flat-info .fas {
+  color:     #EE556C;
+  font-size: 30px;
+  margin:    0 10px;
+}
+
+.flat-description {
+  text-align: justify;
+  width:  700px;
+  margin: 30px 0;
+}
+
+.flat {
+  width: 700px;
 }

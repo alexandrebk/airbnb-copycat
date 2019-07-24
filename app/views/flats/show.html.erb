@@ -1,21 +1,32 @@
 <div class="flat-container margin-nav">
-  <div class="show-title">
-    <h3><%= @flat.address %></h3>
-    <%= link_to flats_path do %>
-      <button class="btn btn-principal btn-margin-top">Tous les apparts</button>
-    <% end %>
-  </div>
-  <div class="flat-content">
-    <%= cl_image_tag @flat.photo, height: 400, width: 600 %>
-    <div>
-      <li><%= @flat.description %></li>
+  <div class="flat-container-left">
+    <div class="show-title flat">
+      <h3><%= @flat.address %></h3>
+      <%= link_to flats_path do %>
+        <button class="btn btn-principal btn-margin-top">Tous les apparts</button>
+      <% end %>
+    </div>
+
+    <div class="flat-content">
+      <%= cl_image_tag @flat.photo, height: 500, width: 700 %>
+    </div>
+
+    <div class="flat-description">
       <div class="flat-info">
-        <li><%= pluralize(@flat.room, 'chambre')%></li>
-        <li><%= @flat.surface %> m²</li>
-        <li><%= @flat.price %> € / nuit</li>
-        <li>Personnes : <%= @flat.max_guests %></li>
+        <p><i class="fas fa-bed"></i> <%= pluralize(@flat.room, 'chambre')%></p>
+        <p><i class="fas fa-ruler-combined"></i> <%= @flat.surface %> m²</p>
+        <p><i class="fas fa-euro-sign"></i> <%= @flat.price %> € / nuit</p>
+        <p><i class="fas fa-users"></i> <%= @flat.max_guests %></p>
       </div>
-      <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
+      <p><%= @flat.description %></p>
     </div>
   </div>
+  <div class="flat-calendar">
+    <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
+  </div>
+
+  <div
+    id="booking-form-div"
+    data-bookings="<%= @bookings_dates.to_json %>"
+  >
 </div>
