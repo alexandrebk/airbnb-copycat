@@ -1,0 +1,3 @@
+<%= current_user.conversation_with(params[:id]) do |message| %>
+  <%= message.content %>
+<%= end %>
