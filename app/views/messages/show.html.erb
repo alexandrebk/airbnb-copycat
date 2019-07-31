@@ -1,3 +1,6 @@
-<%= current_user.conversation_with(params[:id]) do |message| %>
-  <%= message.content %>
-<%= end %>
+<ul>
+  <%= current_user.conversation_with(params[:id]).each do |message| %>
+    <li><%= message.content %></li>
+  <% end %>
+</ul>
+<%= link_to 'Retour aux conversations', messages_path %>

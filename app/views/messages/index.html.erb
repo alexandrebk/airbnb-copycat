@@ -1,5 +1,5 @@
-<%= current_user.friends do |friend| %>
-  <%= link_to messages_path(friend) do %>
-    Conversation with : <%= friend.name %>
+<%= current_user.friends.each do |friend| %>
+  <%= link_to friend_message_path(friend, friend.id) do %>
+    <p>Conversation avec <%= friend.first_name %></p>
   <% end %>
-<%= end %>
+<% end %>

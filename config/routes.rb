@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'messages/index'
+  # get 'messages/show'
   namespace :admin do
       resources :users
       resources :bookings
@@ -14,5 +16,9 @@ Rails.application.routes.draw do
   end
   get 'my_flat', to: 'flats#my_flat'
   resources :bookings, only: [:index]
+
   resources :messages, only: [:index]
+  resources :friends do
+    resources :messages, only: [:show]
+  end
 end
