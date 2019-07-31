@@ -1,5 +1,12 @@
-<%= current_user.friends.each do |friend| %>
-  <%= link_to friend_message_path(friend, friend.id) do %>
-    <p>Conversation avec <%= friend.first_name %></p>
+<div class="container">
+  <ul>
+    <% @messages.each do |message| %>
+      <li><%= message.sender.first_name %> dit : <%= message.content %></li>
+    <% end %>
+  </ul>
+  <%= simple_form_for [@friend, @message] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Send a message", class: "btn btn-primary" %>
   <% end %>
-<% end %>
+  <%= link_to 'Retour aux conversations', conversations_path %>
+</div>
