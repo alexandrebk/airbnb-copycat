@@ -4,11 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_many :flats,    dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :messages_as_receiver, foreign_key: 'receiver_id', class_name: 'Message'
-  has_many :messages_as_sender,   foreign_key: 'sender_id',   class_name: 'Message'
 
   def friends
     friends = Message.where(sender: self).map { |message| message.receiver} + Message.where(receiver: self).map { |message| message.sender}
