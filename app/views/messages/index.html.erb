@@ -1,12 +1,16 @@
-<div class="container">
-  <ul>
+<div class="pages-container margin-nav">
+  <h3>Ma conversation avec <%= @friend.first_name %></h3>
     <% @messages.each do |message| %>
-      <li><%= message.sender.first_name %> dit : <%= message.content %></li>
+      <ul>
+        <li><p><%= message.sender.first_name %> dit : <%= message.content %></p></li>
+      </ul>
     <% end %>
-  </ul>
-  <%= simple_form_for [@friend, @message] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "Send a message", class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to 'Retour aux conversations', conversations_path %>
+
+    <%= simple_form_for [@friend, @message] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Envoyer un message", class: "btn btn-primary" %>
+    <% end %>
+
+    <%= link_to 'Retour aux conversations', conversations_path %>
+  </div>
 </div>

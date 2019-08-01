@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # get 'messages/index'
-  # get 'messages/show'
   namespace :admin do
       resources :users
       resources :bookings

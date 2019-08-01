@@ -1,8 +1,12 @@
-<!-- Afficher un truc si on a pas de messages -->
-<div class="container">
-  <% @friends.each do |friend| %>
-    <%= link_to user_messages_path(friend) do %>
-      <p>Conversation avec <%= friend.first_name %></p>
+<div class="pages-container margin-nav">
+  <% if @friends.empty? %>
+    <h3>Vous n'avez pas de conversation</p>
+  <% else %>
+    <h3>Mes conversations</h3>
+    <% @friends.each do |friend| %>
+      <%= link_to user_messages_path(friend) do %>
+        <p>Conversation avec <%= friend.first_name %></p>
+      <% end %>
     <% end %>
   <% end %>
 </div>
