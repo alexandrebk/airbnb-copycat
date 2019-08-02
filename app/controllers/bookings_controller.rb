@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params.merge(user: current_user))
+    @booking      = Booking.new(booking_params.merge(user: current_user))
     @booking.flat = @flat
     if @booking.save!
       redirect_to bookings_path
@@ -17,12 +17,12 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @nb_nights = (@booking.end_date - @booking.start_date).to_i
+    @nb_nights   = (@booking.end_date - @booking.start_date).to_i
     @total_price = (@nb_nights * @booking.flat.price)
-    @markers = [{
-      lat: @flat.latitude,
-      lng: @flat.longitude
-    }]
+    @markers     = [{
+                      lat: @flat.latitude,
+                      lng: @flat.longitude
+                    }]
   end
 
   def destroy

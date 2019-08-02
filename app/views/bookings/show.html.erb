@@ -26,7 +26,7 @@
     <div class="book-description">
       <li><%= @flat.description %></li>
     </div>
-    <%= link_to conversations_path, :user_id => user.id do %>
+    <%= link_to user_messages_path(@flat.user) do %>
       <button class="btn btn-principal btn-margin-top">Contacter le propriétaire</button>
     <% end %>
   </div>
