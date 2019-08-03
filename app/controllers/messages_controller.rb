@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_friend, only: [:index, :create]
 
   def conversations
-    @friends = current_user.friends
+    @users_with_conversation = current_user.friends
   end
 
   def index

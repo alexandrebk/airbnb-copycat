@@ -1,10 +1,14 @@
 <div class="pages-container margin-nav">
   <h3>Ma conversation avec <%= @friend.first_name %></h3>
+  <% if @messages.empty? %>
+    <p> Envoyer un message à <%= @friend.first_name %> </p>
+  <% else %>
     <% @messages.each do |message| %>
       <ul>
         <li><p><%= message.sender.first_name %> dit : <%= message.content %></p></li>
       </ul>
     <% end %>
+  <% end %>
 
     <%= simple_form_for [@friend, @message] do |f| %>
       <%= f.input :content %>
@@ -12,5 +16,4 @@
     <% end %>
 
     <%= link_to 'Retour aux conversations', conversations_path %>
-  </div>
 </div>
