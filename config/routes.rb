@@ -14,4 +14,9 @@ Rails.application.routes.draw do
   end
   get 'my_flat', to: 'flats#my_flat'
   resources :bookings, only: [:index]
+
+  get 'conversations', to: 'messages#conversations'
+  resources :users do
+    resources :messages, only: [:index, :create]
+  end
 end

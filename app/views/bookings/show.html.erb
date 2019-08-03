@@ -26,6 +26,9 @@
     <div class="book-description">
       <li><%= @flat.description %></li>
     </div>
+    <%= link_to user_messages_path(@flat.user), class:"btn btn-principal btn-margin-top" do %>
+      Contacter le propriétaire
+    <% end %>
   </div>
 
   <div
