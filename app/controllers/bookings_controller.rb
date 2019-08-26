@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
       lat: @flat.latitude,
       lng: @flat.longitude
     }]
+    @review = Review.new
   end
 
   def destroy
@@ -42,5 +43,9 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def review_params
+    params.require(:review).permit(:content, :rating)
   end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
   namespace :admin do
       resources :users
       resources :bookings
@@ -10,7 +12,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :flats do
-    resources :bookings, only: [:create, :new, :show, :destroy]
+    resources :bookings, only: [:create, :new, :show, :destroy] do
+      resources :reviews, only: [:new, :create]
+    end
   end
   get 'my_flat', to: 'flats#my_flat'
   resources :bookings, only: [:index]

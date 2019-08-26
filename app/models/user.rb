@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :flats, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def friends
     friends = Message.where(sender: self).map { |message| message.receiver} + Message.where(receiver: self).map { |message| message.sender}
@@ -16,5 +17,9 @@ class User < ApplicationRecord
     friend       = User.find(friend_id)
     conversation = Message.where(sender: self, receiver: friend) + Message.where(sender: friend, receiver: self)
     conversation.sort_by { |message| message.created_at }
+  end
+
+  def name
+    "#{first_name} #{last_name}"
   end
 end
