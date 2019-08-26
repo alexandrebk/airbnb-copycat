@@ -29,7 +29,7 @@
     <%= link_to user_messages_path(@flat.user), class:"btn btn-principal btn-margin-top" do %>
       Contacter le propriétaire
     <% end %>
-    <%= simple_form_for(@booking, @review) do |f| %>
+    <%= simple_form_for(@flat, @booking, @review) do |f| %>
       <%= f.input :content %>
       <%= f.input :rating %>
       <%= f.association :booking %>
