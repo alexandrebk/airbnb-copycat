@@ -13,13 +13,15 @@ Rails.application.routes.draw do
 
   resources :flats do
     resources :bookings, only: [:create, :new, :show, :destroy] do
-      resources :reviews, only: [:new, :create]
+      member do
+        resources :reviews, only: [:new, :create]
+      end
     end
   end
   get 'my_flat', to: 'flats#my_flat'
   resources :bookings, only: [:index]
-
   get 'conversations', to: 'messages#conversations'
+
   resources :users do
     resources :messages, only: [:index, :create]
   end
