@@ -9,7 +9,7 @@
     <% else %>
       <% @bookings.each do |booking| %>
         <div class="card-flat">
-          <%= link_to flat_booking_path(booking.flat.id, booking.id) do %>
+          <%= link_to booking_path(booking) do %>
             <div class="card-flat-image">
               <%= cl_image_tag booking.flat.photo, height: 300, width: 400, crop: :fill %>
             </div>

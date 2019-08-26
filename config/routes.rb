@@ -12,15 +12,17 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :flats do
-    resources :bookings, only: [:create, :new, :show, :destroy] do
-      member do
-        resources :reviews, only: [:new, :create]
-      end
-    end
+    resources :bookings, only: [:create, :new, :destroy]
   end
   get 'my_flat', to: 'flats#my_flat'
   resources :bookings, only: [:index]
   get 'conversations', to: 'messages#conversations'
+
+  resources :bookings, only: [:show] do
+    member do
+      resources :reviews, only: [:new, :create]
+    end
+  end
 
   resources :users do
     resources :messages, only: [:index, :create]

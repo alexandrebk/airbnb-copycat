@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @flat = @booking.flat
     @nb_nights = (@booking.end_date - @booking.start_date).to_i
     @total_price = (@nb_nights * @booking.flat.price)
     @markers = [{
