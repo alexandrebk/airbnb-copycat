@@ -11,10 +11,10 @@ Flat.destroy_all
 puts "Flats : destroyed"
 
 puts "Seeding users"
-alexandre   = User.create!(first_name: 'Alexandre', last_name: 'Bouvier', email: 'alexandre@gmail.com', password: '123456')
-philippine  = User.create!(first_name: 'Philippine', last_name: 'Bouton', email: 'philippine@gmail.com', password: '123456')
-maxime      = User.create!(first_name: 'Maxime', last_name: 'Personnic', email: 'maxime@gmail.com', password: '456789')
-mathieu     = User.create!(first_name: 'Mathieu', last_name: 'Nicolas', email: 'mathieu@gmail.com', password: '456789')
+alexandre   = User.create!(first_name: 'Alexandre',  last_name: 'Bouvier',   email: 'alexandre@gmail.com',  password: '123456')
+philippine  = User.create!(first_name: 'Philippine', last_name: 'Bouton',    email: 'philippine@gmail.com', password: '123456')
+maxime      = User.create!(first_name: 'Maxime',     last_name: 'Personnic', email: 'maxime@gmail.com',     password: '456789')
+mathieu     = User.create!(first_name: 'Mathieu',    last_name: 'Nicolas',   email: 'mathieu@gmail.com',    password: '456789')
 
 puts "Users ok !"
 
@@ -114,4 +114,23 @@ sixth_booking = Booking.create(
   )
 
 puts "Bookings added"
+
+puts "Seeding reviews"
+
+Review.create!(
+  booking: fifth_booking,
+  user:    alexandre,
+  content: "Hote Excellent",
+  rating:  1,
+)
+
+Review.create!(
+  booking: fifth_booking,
+  user:    philippine,
+  content: "Hote Excellent",
+  rating:  3,
+)
+
+puts "Review added"
 puts "all done !"
+
