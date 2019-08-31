@@ -5,4 +5,8 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date,   presence: true
+
+  def name
+    self.flat.address
+  end
 end
