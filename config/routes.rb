@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index] do
     resources :reviews, only: [:create]
   end
-  resources :reviews, only: :new
   get 'my_flat', to: 'flats#my_flat'
   get 'conversations', to: 'messages#conversations'
 end
