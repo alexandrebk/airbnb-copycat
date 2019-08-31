@@ -1,5 +1,5 @@
 class Flat < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
     pg_search_scope :search_by_description_and_address,
       against: [ :description, :address ],
       using: {
@@ -21,6 +21,7 @@ class Flat < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def average
-    self.reviews.average(:rating)
+    # self.reviews.average(:rating)
+    self.reviews.sum(&:rating) / self.reviews.size
   end
 end
