@@ -21,5 +21,6 @@ class Flat < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def average
+    self.reviews.average(:rating)
   end
 end
