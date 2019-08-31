@@ -20,7 +20,7 @@
       </div>
       <p><%= @flat.description %></p>
       <br>
-      <% @reviews.each do |review| %>
+      <% @flat.reviews.each do |review| %>
         <p><%= review.user.name %></p>
         <p><%= review.content %></p>
         <p><%= review.rating %></p>

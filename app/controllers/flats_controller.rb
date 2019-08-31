@@ -18,7 +18,6 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @reviews        = Review.where(flat: @flat)
     @booking        = Booking.new
     @bookings       = Booking.where(flat: @flat)
     @bookings_dates = @bookings.map do |booking|
