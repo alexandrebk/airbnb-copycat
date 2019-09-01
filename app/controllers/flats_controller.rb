@@ -3,10 +3,20 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @flats = Flat.search_by_description_and_address("%#{params[:query]}%")
+    p "-----------"
+    p "-----------"
+    p "-----------"
+    p params
+    if params[:date].present?
+      p "params date present"
+      @flats = Flat.all
+    elsif params[:query].present?
+      p "params query present"
+      p @flats = Flat.search_by_description_and_address("%#{params[:query]}%")
     else
-      @flats = Flat.where.not(latitude: nil, longitude: nil)
+      # @flats = Flat.where.not(latitude: nil, longitude: nil)
+      # new method
+      p @flats = Flat.geocoded
     end
     @markers = @flats.map do |flat|
       {

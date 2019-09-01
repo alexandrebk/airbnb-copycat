@@ -8,6 +8,24 @@
           class: "form-control",
           placeholder: "Trouver un appart"
         %>
+        <%#= text_field_tag :date,
+          params[:date],
+          class: "form-control"
+         %>
+        <%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "5km") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "10km") %>
+         <%= check_box_tag(:next_week) %>
+         <%= label_tag(:next_week, "Semaine prochaine") %>
+         <%= check_box_tag(:next_month) %>
+         <%= label_tag(:next_month, "Mois prochain") %>
+         Du
+         <%= date_field(:user, :born_on) %>
+         Au
+         <%= date_field(:user, :born_on) %>
+         <%= submit_tag "Chercher", class: "btn btn-primary" %>
+
       <% end %>
     </div>
 
