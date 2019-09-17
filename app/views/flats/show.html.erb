@@ -8,25 +8,23 @@
     </div>
 
     <div class="flat-content">
-      <%#= cl_image_tag @flat.photo, height: 500, width: 700 %>
-      <%# <% if @flat.image.attached? %1> %>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">  
-            <% @flat.images.each_with_index do |image, index| %>
-              <div class="carousel-item <%= "active" if index == 0%>">
-                <%= image_tag image, height: 500, width: 700 %>
-              </div>
-            <% end %>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% @flat.images.each_with_index do |image, index| %>
+            <div class="carousel-item <%= "active" if index == 0%>">
+              <%= image_tag image, height: 500, width: 700 %>
+            </div>
+          <% end %>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
 
     <div class="flat-description">
@@ -42,9 +40,8 @@
   <div class="flat-calendar">
     <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
   </div>
-
   <div
-       id="booking-form-div"
-       data-bookings="<%= @bookings_dates.to_json %>"
-       >
-  </div>
+    id="booking-form-div"
+    data-bookings="<%= @bookings_dates.to_json %>"
+  >
+</div>
