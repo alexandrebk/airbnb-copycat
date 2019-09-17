@@ -11,8 +11,7 @@
           <%= f.input :max_guests, collection: 0..20 %>
           <%= f.input :price, label: "Price in €" %>
         </div>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.file_field :images, as: :file, multiple: true, class: "form-control" %>
         <%= f.submit "Valider", class: 'btn btn-principal' %>
       <% end %>
       <%= link_to "Revenir à mes apparts", my_flat_path %>
