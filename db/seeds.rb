@@ -40,8 +40,8 @@ philippine_flat = Flat.create(
   description:  "Près du centre de Paris en 10 mn en métro ou bus, 20 minutes à pieds pour le Marais. Commerces et Métro Parmentier L3 au pied de l'immeuble. Bus 96 qui traverse le marais, Chatelet, Quartier latin, Luxembourg, Montparnasse. 10 à 20 mn des Gares. Deux pièces SDB, une chambre un lit double, cuisine, entrée, wc. (une troisième pièce est fermée d'accès). Pour les allergiques, un chat vit le reste du temps ici. je vous enverrai par mail une notice.",
   max_guests:   4,
   )
-philippine_flat.images.attach(io: File.open("app/assets/images/mathieu_flat.jpeg"), filename: 'image_name.jpeg', content_type: 'image/jpeg')
-
+philippine_flat.images.attach(io: File.open("app/assets/images/philippine_flat.jpeg"), filename: 'image_name.jpeg', content_type: 'image/jpeg')
+philippine_flat.images.attach(io: File.open("app/assets/images/alexandre_flat.jpeg"), filename: 'alexandre_flat.jpeg', content_type: 'image/jpeg')
 
 maxime_flat = Flat.create(
   user:         maxime,
@@ -52,7 +52,7 @@ maxime_flat = Flat.create(
   description:  "Votre espace 2 pièces 40m2, tout le 2e étage d'un immeuble de 1830, chambre sur cour, cuisine équipée, table à manger, salon avec poutres apparentes, home-cinema 55' et canapé lit 2 places, douche à l'italienne.",
   max_guests:   2,
   )
-maxime_flat.images.attach(io: File.open("app/assets/images/mathieu_flat.jpeg"), filename: 'image_name.jpeg', content_type: 'image/jpeg')
+maxime_flat.images.attach(io: File.open("app/assets/images/maxime_flat.jpeg"), filename: 'image_name.jpeg', content_type: 'image/jpeg')
 
 
 mathieu_flat = Flat.create(
