@@ -23,6 +23,6 @@ class Flat < ApplicationRecord
 
   def average
     # self.reviews.average(:rating)
-    self.reviews.sum(&:rating) / self.reviews.size
+    self.reviews.empty? ? nil : self.reviews.sum(&:rating) / self.reviews.size
   end
 end
