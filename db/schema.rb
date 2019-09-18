@@ -80,9 +80,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_123311) do
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "flat_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
-    t.index ["flat_id"], name: "index_reviews_on_flat_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -107,6 +105,5 @@ ActiveRecord::Schema.define(version: 2019_09_17_123311) do
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "bookings"
-  add_foreign_key "reviews", "flats"
   add_foreign_key "reviews", "users"
 end
