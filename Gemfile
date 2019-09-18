@@ -22,6 +22,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'administrate', '~> 0.11'
 gem 'activestorage'
+gem "aws-sdk-s3", require: false
 
 group :development do
   gem 'web-console', '>= 3.3.0'
