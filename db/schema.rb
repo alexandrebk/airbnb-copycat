@@ -73,6 +73,19 @@ ActiveRecord::Schema.define(version: 2019_09_17_123311) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "flat_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["flat_id"], name: "index_reviews_on_flat_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -93,4 +106,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_123311) do
   add_foreign_key "flats", "users"
   add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "flats"
+  add_foreign_key "reviews", "users"
 end
