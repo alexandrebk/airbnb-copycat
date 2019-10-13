@@ -35,13 +35,28 @@
         <p><i class="fas fa-users"></i> <%= @flat.max_guests %></p>
       </div>
       <p><%= @flat.description %></p>
+      <!-- !!!!!!!!!!!!!!!! -->
+      <!-- Pas de br please -->
+      <!-- !!!!!!!!!!!!!!!! -->
+      <br>
+      <% @flat.reviews.each do |review| %>
+        <p><%= review.user.name %></p>
+        <p><%= review.content %></p>
+        <p><%= review.rating %></p>
+      <% end %>
+
+      <% unless @flat.average.nil? %>
+        <h2>Average</h2>
+        <p><%= @flat.average %></p>
+      <% end %>
     </div>
   </div>
   <div class="flat-calendar">
     <%= render 'bookings/form', booking: @booking, flat: @flat, text: "Réserver" %>
   </div>
   <div
-    id="booking-form-div"
-    data-bookings="<%= @bookings_dates.to_json %>"
-  >
-</div>
+       id="booking-form-div"
+       data-bookings="<%= @bookings_dates.to_json %>"
+       >
+  </div>
+
