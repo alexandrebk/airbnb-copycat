@@ -15,6 +15,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# https://github.com/matt-harvey/tabulo
+gem 'tabulo', '~> 2.0.1'
+
 gem 'devise'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder', '~> 1.5.1'
