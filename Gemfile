@@ -26,6 +26,8 @@ gem 'carrierwave', '~> 1.2'
 gem 'administrate', '~> 0.11'
 gem 'activestorage'
 gem "aws-sdk-s3", require: false
+gem 'sidekiq', '6.0.3'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
