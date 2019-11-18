@@ -348,7 +348,7 @@ DEPENDENCIES
   redis
   rspec-rails (~> 3.8.2)
   sassc-rails
-  sidekiq
+  sidekiq (= 6.0.3)
   sidekiq-failures (~> 1.0)
   simple_form
   spring
