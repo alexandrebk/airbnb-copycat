@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
   namespace :admin do
       resources :users
       resources :bookings
@@ -18,5 +19,9 @@ Rails.application.routes.draw do
   get 'conversations', to: 'messages#conversations'
   resources :users do
     resources :messages, only: [:index, :create]
+  end
+
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
   end
 end

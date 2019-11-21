@@ -11,7 +11,7 @@ Flat.destroy_all
 puts "Flats : destroyed"
 
 puts "Seeding users"
-alexandre  = User.create!(first_name: 'Alexandre',  last_name: 'Bouvier',   email: 'alexandre@gmail.com',  password: '123456')
+alexandre  = User.create!(first_name: 'Alexandre',  last_name: 'Bouvier',   email: 'alexandre@gmail.com',  password: '123456', admin: true)
 philippine = User.create!(first_name: 'Philippine', last_name: 'Bouton',    email: 'philippine@gmail.com', password: '123456')
 maxime     = User.create!(first_name: 'Maxime',     last_name: 'Personnic', email: 'maxime@gmail.com',     password: '456789')
 mathieu    = User.create!(first_name: 'Mathieu',    last_name: 'Nicolas',   email: 'mathieu@gmail.com',    password: '456789')
