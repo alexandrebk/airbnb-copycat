@@ -8,13 +8,13 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   def friends
-    friends = Message.where(sender: self).map { |message| message.receiver} + Message.where(receiver: self).map { |message| message.sender}
+    friends = Message.where(sender: self).map(&:receiver) + Message.where(receiver: self).map(&:sender)
     friends.uniq
   end
 
   def conversation_with(friend_id)
     friend       = User.find(friend_id)
     conversation = Message.where(sender: self, receiver: friend) + Message.where(sender: friend, receiver: self)
-    conversation.sort_by { |message| message.created_at }
+    conversation.sort_by(&:created_at)
   end
 end
