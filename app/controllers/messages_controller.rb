@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_messages, only: [:index, :create]
-  before_action :set_friend, only: [:index, :create]
+  before_action :set_friend,   only: [:index, :create]
 
   def conversations
     @users_with_conversation = current_user.friends
@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   def create
     @message          = Message.new(message_params)
     @message.sender   = current_user
-    @message.receiver = User.find(params[:user_id])
+    @message.receiver = @friend
     if @message.save
       redirect_to user_messages_path(@message.receiver)
     else

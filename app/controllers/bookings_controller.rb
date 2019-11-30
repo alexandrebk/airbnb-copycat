@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_flat, only: [:create, :show]
+  before_action :set_flat, only: [:create]
   before_action :set_booking, only: [:show, :destroy]
 
   def index
@@ -17,9 +17,10 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @nb_nights = (@booking.end_date - @booking.start_date).to_i
-    @total_price = (@nb_nights * @booking.flat.price)
-    @markers = [{
+    @flat         = @booking.flat
+    @total_nights = @booking.total_nights
+    @total_price  = @booking.total_price
+    @markers      = [{
       lat: @flat.latitude,
       lng: @flat.longitude
     }]

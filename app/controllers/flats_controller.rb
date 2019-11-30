@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -19,11 +19,11 @@ class FlatsController < ApplicationController
 
   def show
     @booking        = Booking.new
-    @bookings       = Booking.where(flat: @flat)
+    @bookings       = @flat.bookings
     @bookings_dates = @bookings.map do |booking|
       {
         from: booking.start_date,
-        to:   booking.end_date
+        to: booking.end_date
       }
     end
   end
