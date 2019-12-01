@@ -10,7 +10,7 @@
 
 
     <div class="book-content">
-      <%= cl_image_tag @flat.photo, height: 300, width: 400, crop: :fill %>
+      <%= image_tag @flat.images.first, height: 300, width: 400, crop: :fill %>
       <div class="book-info">
         <h3><%= @flat.address %></h3>
         <div class="book-date">

@@ -12,7 +12,7 @@
         <div class="card-flat">
           <%= link_to edit_flat_path(flat.id) do %>
             <div class="card-flat-image">
-              <%= cl_image_tag flat.photo, height: 300, width: 400, crop: :fill %>
+              <%= image_tag flat.images.first, height: 300, width: 400, crop: :fill %>
             </div>
             <h5 class="card-flat-address"><%= flat.address %></h5>
             <%= link_to flat_path(flat.id) do %>
