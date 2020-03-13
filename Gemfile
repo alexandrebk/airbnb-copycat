@@ -23,7 +23,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'geocoder', '~> 1.5.1'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-gem 'administrate', '~> 0.11'
+gem 'administrate', '~> 0.13'
 gem 'activestorage'
 gem "aws-sdk-s3", require: false
 gem 'sidekiq', '6.0.3'
