@@ -3,6 +3,8 @@
     <%= simple_form_for [flat, booking] do |f| %>
       <%= f.input :start_date, label: "Sélectionnez vos dates:", as: :string, required: false, input_html: { id: "range_start", class: "d-none"} %>
       <%= f.input :end_date, label: false, as: :string, required: false, input_html: { id: "range_end", class: "d-none" } %>
+      <p>Réservation pour <span id="total-nights">0</span> nuits</p>
+      <p>Prix total : <span class="font-weight-bold"><span id="total-price">0</span> €</span></p>
       <%= f.submit text, class: 'btn btn-principal' %>
     <% end %>
   </div>

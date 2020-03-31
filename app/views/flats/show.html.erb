@@ -31,7 +31,7 @@
       <div class="flat-info">
         <p><i class="fas fa-bed"></i> <%= pluralize(@flat.room, 'chambre')%></p>
         <p><i class="fas fa-ruler-combined"></i> <%= @flat.surface %> m²</p>
-        <p><i class="fas fa-euro-sign"></i> <%= @flat.price %> € / nuit</p>
+        <p><i class="fas fa-euro-sign"></i><span id="flat-price-per-night"><%= @flat.price %></span> € / nuit</p>
         <p><i class="fas fa-users"></i> <%= @flat.max_guests %></p>
       </div>
       <p><%= @flat.description %></p>
