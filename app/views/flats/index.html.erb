@@ -2,13 +2,24 @@
 
   <div class="cards-container">
     <div class="search">
-      <%= form_tag flats_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Trouver un appart"
-        %>
+
+      <%= simple_form_for :flats_filter, url: flats_path, method: :get do |f| %>
+        <%= f.input :search, label: false,
+                              placeholder: "Champ de recherche" %>
+        <%= f.input :min_price, label: false,
+                                input_html: { type: :number,
+                                              min: "0",
+                                              placeholder: "Prix mini" } %>
+        <%= f.input :max_price, label: false,
+                                input_html: { type: :number,
+                                              placeholder: "Prix max" } %>
+        <%= f.input :start_date, label: false,
+                                input_html: { type: :date } %>
+        <%= f.input :end_date, label: false,
+                                input_html: { type: :date } %>
+        <%= f.submit "Chercher", class: "btn btn-primary" %>
       <% end %>
+
     </div>
 
     <div class="cards-grid-2">
