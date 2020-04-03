@@ -2,24 +2,33 @@
 
   <div class="cards-container">
     <div class="search">
-
       <%= simple_form_for :flats_filter, url: flats_path, method: :get do |f| %>
         <%= f.input :search, label: false,
-                              placeholder: "Champ de recherche" %>
-        <%= f.input :min_price, label: false,
-                                input_html: { type: :number,
-                                              min: "0",
-                                              placeholder: "Prix mini" } %>
-        <%= f.input :max_price, label: false,
-                                input_html: { type: :number,
-                                              placeholder: "Prix max" } %>
-        <%= f.input :start_date, label: false,
-                                input_html: { type: :date } %>
-        <%= f.input :end_date, label: false,
-                                input_html: { type: :date } %>
-        <%= f.submit "Chercher", class: "btn btn-primary" %>
-      <% end %>
+                             input_html: { placeholder: "Champ de recherche" } %>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= f.input :min_price, label: false,
+                                    input_html: { type: :number,
+                                                  min: "0",
+                                                  placeholder: "Prix mini" } %>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= f.input :max_price, label: false,
+                                    input_html: { type: :number,
+                                                  placeholder: "Prix max" } %>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= f.input :start_date, label: false,
+                                     input_html: { type: :date } %>
 
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= f.input :end_date, label: false,
+                                   input_html: { type: :date } %>
+          </div>
+        </div>
+        <%= f.submit "Chercher", class: "btn btn-principal mt-0" %>
+      <% end %>
     </div>
 
     <div class="cards-grid-2">
