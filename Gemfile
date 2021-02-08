@@ -22,7 +22,7 @@ gem 'devise'
 gem 'pg_search', '~> 2.3.2'
 gem 'geocoder', '~> 1.5.1'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'administrate', '~> 0.13'
 gem 'activestorage'
 gem "aws-sdk-s3", require: false
